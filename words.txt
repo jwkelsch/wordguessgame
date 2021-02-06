@@ -1,0 +1,7 @@
+flower
+bowser
+glass
+car
+banana
+mouse
+keyboard

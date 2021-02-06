@@ -9,6 +9,8 @@ using namespace std;
 #include <iostream>
 #include <vector>
 #include <string>
+#include <ctime>
+#include <cstdlib>
 #include "Dictionary.h"
 
 
@@ -28,12 +30,34 @@ using namespace std;
 			cout << "input x to finish, or input another word: " << endl;
 			cin >> input;
 		}
-
-
 	}
+
 	void Dictionary::filePopulate(){
+		string filename;
+		cout << "input file name: " << endl;
+		cin >> filename;
+		ifstream infile(filename);
 
+		string readword;
+		infile >> readword;
+		while(!infile.eof()){
+			_words.push_back(readword);
+			infile >> readword;
+		}
 	}
+
 	string Dictionary::randomWord(){
 
+		int dictionarysize;
+		dictionarysize = _words.size();
+		int randomword =  rand() % dictionarysize;
+
+		return _words[randomword];
+	}
+
+	//debugging
+	void Dictionary::printDictionary(){
+		for (int i=0; i<_words.size(); i++){
+			cout << _words[i] << endl;
+		}
 	}

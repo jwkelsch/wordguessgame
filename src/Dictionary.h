@@ -19,6 +19,8 @@ public:
 	void userPopulate();
 	void filePopulate();
 	string randomWord();
+	//debugging
+	void printDictionary();
 };
 
 #endif /* DICTIONARY_H_ */
