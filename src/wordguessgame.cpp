@@ -6,12 +6,20 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
 using namespace std;
+#include <iostream>
+#include <vector>
+#include <string>
+#include "Dictionary.h"
+
 
 int main() {
+	//state: private member vars
+	//behavior: public functions
 
 	cout << "hello world";
+	vector<string> a;
+	Dictionary b;
 
 
 
