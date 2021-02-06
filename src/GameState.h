@@ -11,11 +11,18 @@
 class GameState {
 
 private:
-	string currWord;
-
+	string _currWord;
+	vector<bool> _wordState;
+	vector<string> _guessedWordsLetters;
+	int _remainingAttempts;
 
 public:
 	GameState();
+	void userGuess();
+	void getCurrWord();
+	void getWordState();
+	void getGuessedWordsLetters();
+	void getRemainingAttempts();
 };
 
 #endif /* GAMESTATE_H_ */

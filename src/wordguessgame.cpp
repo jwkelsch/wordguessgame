@@ -17,9 +17,10 @@ int main() {
 	//state: private member vars
 	//behavior: public functions
 
-	cout << "hello world";
 	vector<string> a;
 	Dictionary b;
+	b.userPopulate();
+
 
 
 
