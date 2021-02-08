@@ -16,10 +16,15 @@ private:
 	vector<string> _dashes;
 	vector<string> _guessedWordsLetters;
 	int _remainingAttempts;
+	bool _win;
 
 public:
 	GameState();
 	void userGuess(string guess);
+
+	void setWin(bool b);
+	bool getWin();
+	bool checkWin(string guess);
 
 	string getCurrWord();
 	void setCurrWord(string s);
@@ -28,7 +33,9 @@ public:
 	void setWordState(vector<bool> v);
 
 	vector<string> getGuessedWordsLetters();
-	void setGuessedWordsLetters(vector<string> v);           //do i have to apss by reference here for vector??
+	void printGuessedWordsLetters();
+	void setGuessedWordsLetters(string s);           //do i have to apss by reference here for vector??
+	void clearGuesses();
 
 	int getRemainingAttempts();
 	void setRemainingAttempts(int a);

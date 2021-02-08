@@ -47,6 +47,8 @@ int main() {
 	GameState g;
 	Player p;
 	string guess;
+	int losses = 0;
+	int wins = 0;
 
 	while (playChoice == 1){
 		g.setCurrWord(d.randomWord());        //sets gamestate current game word to a random word from the dictionary
@@ -61,25 +63,59 @@ int main() {
 
 
 
-
+		cout << endl;
 		cout << "guess a letter or word: " << endl;
 		cin >> guess;
+		g.setGuessedWordsLetters(guess);                  //adds guess to guessed words and letters vector
+		g.userGuess(guess);
+		cout << endl << "********************" << endl;
+		g.printDashes();
+		g.printGuessedWordsLetters();
 
-		if(guess == g.getCurrWord()){
-					playing = false;                //if guess word, done playing current game
+		/*if(guess == g.getCurrWord()){
+
 					g.clearDashes();                //empties dashes vector for use during next game
+					g.clearGuesses();
 					cout << "you have guessed the word!" << endl;
 					cout << endl;
+					wins++;
+					p.setWins(wins);
+					playing = false;
 
-		}
+		}*/
+
+
+
+					if(g.checkWin(guess)){
+						cout << "win is true";
+
+						cout << "you have guessed the word!" << endl;
+						cout << endl;
+						wins++;
+						p.setWins(wins);
+						g.clearDashes();                //empties dashes vector for use during next game
+						g.clearGuesses();
+						playing = false;
+					}
+
+
 		else{
-		g.userGuess(guess);
-		g.printDashes();
+
+
 		g.setRemainingAttempts(g.getRemainingAttempts()-1);
 		cout << "remaining attempts: " << g.getRemainingAttempts() << endl;
+
+
+
+
 		if(g.getRemainingAttempts() == 0){
 			cout << "you have ran out of guesses!" << endl;
+			cout << "the correct word was: " << g.getCurrWord() << endl;
 			cout << endl;
+			g.clearDashes();                //empties dashes vector for use during next game
+			g.clearGuesses();
+			losses++;
+			p.setLosses(losses);
 			playing = false;
 
 		}
@@ -109,7 +145,11 @@ int main() {
 		cout << "input 1 to play again, or 2 to exit: " << endl;
 		cin >> playChoice;
 		if(playChoice != 1){
-			cout << "thanks for playing";
+			cout << endl;
+			cout << "thanks for playing" << endl;
+			cout << endl;
+			cout << "number of wins: " << p.getWins() << endl;
+			cout << "number of losses: " << p.getLosses() << endl;
 		}
 	}
 
