@@ -45,7 +45,7 @@ using namespace std;
 	}
 
 	string Dictionary::randomWord(){
-
+		srand(time(NULL));
 		int dictionarysize;
 		dictionarysize = _words.size();
 		int randomword =  rand() % dictionarysize;

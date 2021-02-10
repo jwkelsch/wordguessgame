@@ -36,7 +36,6 @@ int main() {
 	//d.printDictionary();   debugging
 
 //Dictionary has been populated
-
 //prompt user to play game or not
 	cout << "input 1 to play a game: " << endl;
 	int playChoice = 0;
@@ -46,6 +45,8 @@ int main() {
 	string guess;
 	int losses = 0;
 	int wins = 0;
+
+
 
 	while (playChoice == 1){
 		g.setCurrWord(d.randomWord());        //sets gamestate current game word to a random word from the dictionary

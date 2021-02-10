@@ -20,7 +20,7 @@ using namespace std;
 			if(guess[0] == _currWord[i]){              //if guess correct char, set specific dash to that char -- is this black magic?
 				_dashes[i] = _currWord[i];
 			}
-			else if(guess == _currWord){       //if guess full word, makes dashes full word
+			else if(guess == _currWord){       //if guess full word, makes _dashes(state of word) full word
 				_dashes[i] = _currWord[i];
 			}
 		}
