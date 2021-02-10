@@ -13,8 +13,6 @@ using namespace std;
 #include <cstdlib>
 #include "Dictionary.h"
 
-
-
 	Dictionary::Dictionary(){}
 
 	Dictionary::Dictionary(vector<string> v){
@@ -51,9 +49,10 @@ using namespace std;
 		int dictionarysize;
 		dictionarysize = _words.size();
 		int randomword =  rand() % dictionarysize;
-
 		return _words[randomword];
 	}
+
+
 
 	//debugging
 	void Dictionary::printDictionary(){

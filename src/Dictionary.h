@@ -16,11 +16,22 @@ private:
 public:
 	Dictionary();                     //default constructor (); vs (){}?
 	Dictionary(vector<string> v);
+
 	void userPopulate();
+	//pre: call function to populate diction of words via console
+	//post: vector of words is populated
+
 	void filePopulate();
+	//pre: call function to populate dictionary from a .txt file
+	//post: vector of words is populated
+
 	string randomWord();
-	//debugging
+	//pre: call function to find a random word
+	//post: random word from the populated dictionary is returned
+
+
 	void printDictionary();
+	//debugging
 };
 
 #endif /* DICTIONARY_H_ */

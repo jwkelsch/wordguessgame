@@ -27,6 +27,8 @@ public:
 	void setLosses(int s);
 	int getLosses();
 
+
+	//simple getter/setters for member variables, default constructor and n arg constructor -- tangible thing object
 };
 
 #endif /* PLAYER_H_ */

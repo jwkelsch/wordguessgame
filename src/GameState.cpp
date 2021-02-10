@@ -24,9 +24,7 @@ using namespace std;
 				_dashes[i] = _currWord[i];
 			}
 		}
-
 	}
-
 
 
 	bool GameState::checkWin(string guess){
@@ -34,7 +32,7 @@ using namespace std;
 				//win game by guessing whole word (working)
 				return true;
 		}
-
+		//check if _dashes has any dashes (unguessed letters) remaining or not
 		string a = "- ";
 		for(int i =0; i<_dashes.size(); i++){
 			if(_dashes[i] == a){
@@ -47,21 +45,9 @@ using namespace std;
 			}
 		}
 
-
-		//this isnt working -- check if no dashes in vector win con -- if user guesses all chars but not whole word to win
-		//working now?
-
-
 		return false;
 	}
 
-
-	void GameState::setWin(bool b){
-		_win =  b;
-	}
-	bool GameState::getWin(){
-		return _win;
-	}
 
 	string GameState::getCurrWord(){
 		return _currWord;
@@ -70,17 +56,6 @@ using namespace std;
 		_currWord = s;
 	}
 
-	vector<bool> GameState::getWordState(){
-		return _wordState;
-	}
-
-	void GameState::setWordState(vector<bool> v){
-		_wordState = v;
-	}
-
-	vector<string> GameState::getGuessedWordsLetters(){
-		return _guessedWordsLetters;
-	}
 
 	void GameState::setGuessedWordsLetters(string s){     //do i have to apss by reference here for vector??
 		_guessedWordsLetters.push_back(s);
@@ -96,6 +71,8 @@ using namespace std;
 		cout << endl;
 	}
 
+
+
 	int GameState::getRemainingAttempts(){
 		return _remainingAttempts;
 	}
@@ -104,38 +81,21 @@ using namespace std;
 		_remainingAttempts = a;
 	}
 
-	/*void GameState::displayDashes(){
 
-
-		for(int i =0; i<(_currWord.length()); i++){
-			_dashes.push_back("- ");
-
-		}
-		for(int i =0; i<_dashes.size(); i++){
-			cout << _dashes[i];
-		}
-		cout << endl;
-
-	}*/
 
 	void GameState::configDashes(){                         //initial dashes of word
-
-
 		for(int i =0; i<(_currWord.length()); i++){
 					_dashes.push_back("- ");
-
 		}
 	}
-
 
 	void GameState::printDashes(){
 		for(int i = 0; i<(_dashes.size()); i++){
 			cout << _dashes[i];
 		}
 		cout << endl;
-
-
 	}
+
 	void GameState::clearDashes(){      //clear contents of dashes
 		_dashes.clear();
 	}
