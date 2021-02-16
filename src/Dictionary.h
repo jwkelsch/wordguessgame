@@ -30,8 +30,6 @@ public:
 	//post: random word from the populated dictionary is returned
 
 
-	void printDictionary();
-	//debugging
 };
 
 #endif /* DICTIONARY_H_ */

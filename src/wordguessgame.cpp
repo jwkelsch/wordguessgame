@@ -33,9 +33,9 @@ int main() {
 		break;
 	}
 
-	//d.printDictionary();   debugging
 
 //Dictionary has been populated
+
 //prompt user to play game or not
 	cout << "input 1 to play a game: " << endl;
 	int playChoice = 0;
@@ -45,6 +45,8 @@ int main() {
 	string guess;
 	int losses = 0;
 	int wins = 0;
+	p.setWins(wins);
+	p.setLosses(losses);
 
 
 
@@ -57,17 +59,14 @@ int main() {
 
 		bool playing = true;
 		while(playing){
-
-		//cout << g.getCurrWord() << endl;  debugging
-
-		cout << endl;
-		cout << "guess a letter or word: " << endl;
-		cin >> guess;
-		g.setGuessedWordsLetters(guess);                  //adds guess to guessed words and letters vector
-		g.userGuess(guess);
-		cout << endl << "********************" << endl;
-		g.printDashes();
-		g.printGuessedWordsLetters();
+			cout << endl;
+			cout << "guess a letter or word: " << endl;
+			cin >> guess;
+			g.setGuessedWordsLetters(guess);                  //adds guess to guessed words and letters vector
+			g.userGuess(guess);
+			cout << endl << "********************" << endl;
+			g.printDashes();
+			g.printGuessedWordsLetters();
 
 		//check if user has won before continuing
 		if(g.checkWin(guess)){
@@ -81,18 +80,18 @@ int main() {
 		}
 
 		else{
-		g.setRemainingAttempts(g.getRemainingAttempts()-1);
-		cout << "remaining attempts: " << g.getRemainingAttempts() << endl;
+			g.setRemainingAttempts(g.getRemainingAttempts()-1);
+			cout << "remaining attempts: " << g.getRemainingAttempts() << endl;
 
 
 		if(g.getRemainingAttempts() == 0){
 			cout << "you have ran out of guesses!" << endl;
 			cout << "the correct word was: " << g.getCurrWord() << endl;
 			cout << endl;
-			g.clearDashes();                //empties dashes vector for use during next game
-			g.clearGuesses();
 			losses++;
 			p.setLosses(losses);
+			g.clearDashes();                //empties dashes vector for use during next game
+			g.clearGuesses();
 			playing = false;
 			}
 		}

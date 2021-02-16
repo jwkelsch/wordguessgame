@@ -17,7 +17,7 @@ using namespace std;
 		//check if user guess is any of the word or letters
 
 		for(int i=0; i<_currWord.length(); i++){
-			if(guess[0] == _currWord[i]){              //if guess correct char, set specific dash to that char -- is this black magic?
+			if(guess[0] == _currWord[i]){              //if guess correct char, set specific dash to that char
 				_dashes[i] = _currWord[i];
 			}
 			else if(guess == _currWord){       //if guess full word, makes _dashes(state of word) full word

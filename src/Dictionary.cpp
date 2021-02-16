@@ -54,9 +54,4 @@ using namespace std;
 
 
 
-	//debugging
-	void Dictionary::printDictionary(){
-		for (int i=0; i<_words.size(); i++){
-			cout << _words[i] << endl;
-		}
-	}
+
